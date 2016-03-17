@@ -15,23 +15,30 @@
             <p>——BY 胡力里</p>
         </section>
         <section>
-            <section><h2>Java 环境配置</h2></section>
+            <section>
+                <h2>Part1: Java 环境配置</h2>
+                <small>通常通过在 Android SDK（Android软件开发包）中使用 Java 作为编程语言来开发 Android 应用程序。</small>
+            </section>
             <section>
                 <h3>1. 安装Java开发工具箱（JDK）</h3>
                 <p>下载地址：<a href="https://www.oracle.com/java/index.html" target="_blank">https://www.oracle.com/java/index.html</a></p>
                 <img src="images/2.png"/>
+                <small>[Java for Developers] --> [Java SE]</small>
             </section>
             <section>
                 <img src="images/1.png"/>
                 <p>Java 运行时环境（JRE）包含虚拟机但不包含编译器</p>
+                <p>例如：Java SE 8u73——Java 标准版 8版第73次更新（内部版本号1.8.0_73）</p>
             </section>
             <section>
                 <img src="images/3.png"/>
                 <img src="images/4.png"/>
+                <p>修改安装路径：D:\Java\jdk1.8.0_*</p>
+                <small>安装路径最好不要含有空格（例如：D:\Program Files\Java\jdk）</small>
             </section>
             <section>
-                <h3>2. 设置执行路径（把 jdk/bin 目录添加到执行路径）</h3>
-                <p class="text-left">执行路径是指操作系统搜索本地可执行文件的目录列表。在windows下，即添加环境变量。</p>
+                <h3>2. 设置执行路径（添加环境变量）</h3>
+                <p class="text-left">执行路径是指操作系统搜索本地可执行文件的目录列表。</p>
                 <ul>
                     <li>我的电脑（右键）--> 属性</li>
                     <li>高级系统设置 --> 高级 --> 环境变量...</li>
@@ -50,6 +57,7 @@
                     <li>编译java源程序，会生成可执行的***.class文件：javac Welcome.java</li>
                     <li>运行编译好的可执行文件：java Welcome</li>
                 </ul>
+                <p><small>Java class文件是可以运行在任何支持Java虚拟机的硬件平台和操作系统上的二进制文件</small></p>
             </section>
             <section>
                 <img src="images/5.png"/>
@@ -61,30 +69,35 @@
             </section>
         </section>
         <section>
-            <section><h2>Android开发环境配置</h2></section>
+            <section><h2>Part2: Android开发环境配置</h2></section>
             <section>
                 <h3>1. 安装Android SDK</h3>
                 <p>Android官方网站：<a href="http://developer.android.com/" target="_blank">http://developer.android.com/</a></p>
                 <p>Android SDK下载地址：<a href="http://developer.android.com/sdk/index.html" target="_blank">http://developer.android.com/sdk/index.html</a></p>
                 <img src="images/7.png"/>
+                <small>可以只安装 [STAND-ALONE SDK TOOLS]</small>
             </section>
             <section>
                 <img src="images/8.png"/>
             </section>
             <section>
-                <img src="images/9.png"/>
-            </section>
-            <section>
-                <p>运行SDK Manager</p>
+                <h3>2. 运行SDK Manager</h3>
                 <img src="images/10.png"/>
             </section>
             <section>
-                <p>安装最新版的sdk的同时安装一个低版本的sdk。版本号的选择取决于你希望最小兼容的Android系统和目标Android系统。</p>
+                <p class="text-left">安装最新版的sdk的同时安装一个低版本的sdk。版本号的选择取决于你希望最小兼容的Android系统和目标Android系统（经过市场调研）。</p>
                 <img src="images/30.png"/>
+            </section>
+            <section>
+                <p>善用文档</p>
+                <img src="images/9.png"/>
             </section>
         </section>
         <section>
-            <section><h2>IDE（集成开发环境）安装</h2></section>
+            <section>
+                <h2>Part3: IDE（集成开发环境）安装</h2>
+                <small>IDE（Integrated Development Environment）是用于程序开发的软件，一般包括代码编辑器、编译器、调试器和图形用户界面工具。</small>
+            </section>
             <section>
                 <ul style="text-align:left;">
                     <li>Android Studio——官方 IDE</li>
@@ -96,6 +109,7 @@
                 <h3>1. IDEA 安装</h3>
                 <a href="https://www.jetbrains.com/idea/" target="_blank">https://www.jetbrains.com/idea/</a>
                 <img src="images/11.png"/>
+                <p>安装免费的 Community 版就足够了。</p>
             </section>
             <section>
                 <h3>2. IDEA 设置</h3>
@@ -103,12 +117,14 @@
             </section>
         </section>
         <section>
-            <section><h2>Getting Started</h2></section>
+            <section><h2>Part4: 创建及运行一个 Android 程序</h2></section>
             <section>
                 <h3>1. 创建一个新工程</h3>
+                <small>Gradle是一个基于Apache Ant和Apache Maven概念的项目自动化建构工具。</small>
                 <img src="images/13.png"/>
             </section>
             <section>
+                <p>设置 Project SDK（Java SDK 和 Android SDK）</p>
                 <img src="images/14.png"/>
             </section>
             <section>
@@ -123,7 +139,6 @@
                 <img src="images/18.png"/>
             </section>
             <section>
-                <small>Gradle是一个基于Apache Ant和Apache Maven概念的项目自动化建构工具。</small>
                 <img src="images/19.png"/>
                 <img src="images/20.png"/>
             </section>
