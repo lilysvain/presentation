@@ -12,13 +12,148 @@
         <section>
             <h1>Android 开发环境配置</h1>
             <div class="blank-100"></div>
-            <small>——BY 胡力里</small>
+            <p>——BY 胡力里</p>
         </section>
         <section>
-            <h2>Java 环境配置</h2>
+            <section><h2>Java 环境配置</h2></section>
             <section>
-                <h4>1. 安装Java开发工具箱（JDK）</h4>
+                <h3>1. 安装Java开发工具箱（JDK）</h3>
                 <p>下载地址：<a href="https://www.oracle.com/java/index.html" target="_blank">https://www.oracle.com/java/index.html</a></p>
+                <img src="images/2.png"/>
+            </section>
+            <section>
+                <img src="images/1.png"/>
+                <p>Java 运行时环境（JRE）包含虚拟机但不包含编译器</p>
+            </section>
+            <section>
+                <img src="images/3.png"/>
+                <img src="images/4.png"/>
+            </section>
+            <section>
+                <h3>2. 设置执行路径（把 jdk/bin 目录添加到执行路径）</h3>
+                <p class="text-left">执行路径是指操作系统搜索本地可执行文件的目录列表。在windows下，即添加环境变量。</p>
+                <ul>
+                    <li>我的电脑（右键）--> 属性</li>
+                    <li>高级系统设置 --> 高级 --> 环境变量...</li>
+                    <li>添加 Path: F:\Java\jdk1.8.0_73\bin</li>
+                </ul>
+            </section>
+            <section>
+                <img src="images/6.png"/>
+            </section>
+            <section>
+                <h3>3. 编译和运行简单的Java程序</h3>
+                <small class="text-left">Tip：Shift+右键，可选择“在此处打开命令窗口”（cmd）</small>
+                <ul style="text-align:left;">
+                    <li>写一个简单的java程序：任何文本编辑器都可以，文件命名为***.java</li>
+                    <li>打开命令行窗口（cmd）</li>
+                    <li>编译java源程序，会生成可执行的***.class文件：javac Welcome.java</li>
+                    <li>运行编译好的可执行文件：java Welcome</li>
+                </ul>
+            </section>
+            <section>
+                <img src="images/5.png"/>
+            </section>
+            <section>
+                <h3>4. Java 学习资料</h3>
+                <p class="text-left">书籍：《head first java》、《core java》（《Java核心技术》）</p>
+                <p class="text-left">官方API文档：<a href="http://docs.oracle.com/javase/8/docs/api/" target="_blank">http://docs.oracle.com/javase/8/docs/api/</a></p>
+            </section>
+        </section>
+        <section>
+            <section><h2>Android开发环境配置</h2></section>
+            <section>
+                <h3>1. 安装Android SDK</h3>
+                <p>Android官方网站：<a href="http://developer.android.com/" target="_blank">http://developer.android.com/</a></p>
+                <p>Android SDK下载地址：<a href="http://developer.android.com/sdk/index.html" target="_blank">http://developer.android.com/sdk/index.html</a></p>
+                <img src="images/7.png"/>
+            </section>
+            <section>
+                <img src="images/8.png"/>
+            </section>
+            <section>
+                <img src="images/9.png"/>
+            </section>
+            <section>
+                <p>运行SDK Manager</p>
+                <img src="images/10.png"/>
+            </section>
+            <section>
+                <p>安装最新版的sdk的同时安装一个低版本的sdk。版本号的选择取决于你希望最小兼容的Android系统和目标Android系统。</p>
+                <img src="images/30.png"/>
+            </section>
+        </section>
+        <section>
+            <section><h2>IDE（集成开发环境）安装</h2></section>
+            <section>
+                <ul style="text-align:left;">
+                    <li>Android Studio——官方 IDE</li>
+                    <li><strong>IntelliJ IDEA</strong>——被认为是当前Java开发效率最快的IDE工具</li>
+                    <li>Eclipse</li>
+                </ul>
+            </section>
+            <section>
+                <h3>1. IDEA 安装</h3>
+                <a href="https://www.jetbrains.com/idea/" target="_blank">https://www.jetbrains.com/idea/</a>
+                <img src="images/11.png"/>
+            </section>
+            <section>
+                <h3>2. IDEA 设置</h3>
+                <img src="images/12.png"/>
+            </section>
+        </section>
+        <section>
+            <section><h2>Getting Started</h2></section>
+            <section>
+                <h3>1. 创建一个新工程</h3>
+                <img src="images/13.png"/>
+            </section>
+            <section>
+                <img src="images/14.png"/>
+            </section>
+            <section>
+                <img src="images/15.png"/>
+                <img src="images/16.png"/>
+            </section>
+            <section>
+                <h3>2. 用已有的源码创建工程</h3>
+                <img src="images/17.png"/>
+            </section>
+            <section>
+                <img src="images/18.png"/>
+            </section>
+            <section>
+                <small>Gradle是一个基于Apache Ant和Apache Maven概念的项目自动化建构工具。</small>
+                <img src="images/19.png"/>
+                <img src="images/20.png"/>
+            </section>
+            <section>
+                <p>原项目SDK版本号与安装SDK版本号不符时，修改gradle配置文件：</p>
+                <img src="images/21.png"/>
+                <p>打开Application文件夹中的build.gradle文件</p>
+                <img src="images/22.png"/>
+                <img src="images/23.png"/>
+            </section>
+            <section>
+                <h3>3. 在仿真器上运行（Emulator）or 真机测试</h3>
+                <img src="images/24.png"/>
+                <img src="images/25.png"/>
+            </section>
+            <section>
+                <img src="images/26.png"/>
+            </section>
+            <section>
+                <img src="images/27.png"/>
+            </section>
+            <section>
+                <img src="images/28.png"/>
+            </section>
+            <section>
+                <img src="images/29.png"/>
+            </section>
+            <section>
+                <h3>4. Genymotion</h3>
+                <p>安装好 Genymotion，然后在 IDEA 中选择 File --> Settings，选择 Plugins 并点击 Browse Repositories。接着在左侧列表里找到 Genymotion 并点击安装。安装好后 IDEA 重启，View --> Toolbar 可以打开插件工具栏</p>
             </section>
         </section>
     </div>
