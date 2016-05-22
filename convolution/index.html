@@ -22,19 +22,35 @@
 		<div class="reveal">
 
 			<div class="slides">
-				<section>
-					<h1>Convolution</h1>
-					<h3>卷积</h3>
-					<p>
-						<small>Created by <a href="http://lilyslily.com">Lily</a></small>
-					</p>
-				</section>
+                <section>
+				    <section>
+					    <h1>Convolution</h1>
+					    <h3>卷积</h3>
+					    <p>
+						    <small>Created by <a href="http://lilyslily.com">Lily</a></small>
+					    </p>
+				    </section>
+                    <section>
+                        <p class="text-left">
+                            <ol>
+                                <li>从“信号与系统”开始了解卷积</li>
+                                <li>卷积“卷”或“不卷”</li>
+                                <li>卷积的物理意义</li>
+                                <li>卷积的应用</li>
+                            </ol>
+                        </p>
+                    </section>
+                </section>
 
 				<section>
                     <section>
-					    <h2>LTI 线性时不变系统</h2>
+                        <h2>从信号与系统开始</h2>
+                    </section>
+                    <section>
+					    <h3>LTI 线性时不变系统</h3>
 					    <p>假设它对脉冲信号 <span style="FONT-FAMILY: Symbol" lang="en-US">d</span>(t) 的响应是 h(t)</p>
 					    <img src="images/1.png" />
+                        <p><small>冲击响应是研究黑匣子的重要方法：在输入端給它一个冲击，测量它输出端的响应。</small></p>
                     </section>
                     <section>
                         <h3>LTI —— 时不变性</h3>
@@ -51,302 +67,203 @@
                             输出也应该被乘上相应的系数，即 Ah(t-<span style="FONT-FAMILY: Symbol" lang="en-US">t</span>).</p>
                         <img src="images/3.png" />
                     </section>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<p class="text-left">把一个任意的输入信号 f(t) 近似成无穷个脉冲函数的叠加，即</p>
+						<p>f(t)=<span style="FONT-FAMILY: Symbol">S</span> f(n<span style="FONT-FAMILY: Symbol">Dt</span>)
+							<span style="FONT-FAMILY: Symbol">d</span>(t-n<span style="FONT-FAMILY: Symbol">Dt</span>) <span style="FONT-FAMILY: Symbol">Dt</span></p>
+						<img src="images/4.png" />
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+						<p class="text-left">系统的输出应该是对每个脉冲信号响应的叠加，即</p>
+						<p>y(t)=<span style="FONT-FAMILY: Symbol">S</span> f(n<span style="FONT-FAMILY: Symbol">Dt</span>)
+							h(t-n<span style="FONT-FAMILY: Symbol">Dt</span>) <span style="FONT-FAMILY: Symbol">Dt</span></p>
+						<p class="text-left">当<span style="FONT-FAMILY: Symbol">Dt</span>->0 时，求和便成了积分，系统的输出也就成了脉冲响应和输入信号的卷积：</p>
+						<p><font face="Times New Roman">y(t) = ∫ f(τ) h(t−τ) dτ</font></p>
+
 					</section>
+				</section>
+
+                <section>
+                    <section>
+                        <h2>什么是卷积？</h2>
+                        <p><font face="Times New Roman">y(t) = ∫ f(τ) h(t−τ) dτ</font>
+                        </p>
+                    </section>
+                    <section>
+                        <h3>源头</h3>
+                        <p class="text-left">卷积的来源是将叠加积分用于线性时不变系统。至少从1903年起，德国数学文献中就有Faltung和convolution这些称呼，其中含有“卷摺”的含义。</p>
+                        <p class="text-left">为了计算每个时间点的卷积结果，需将h(<span style="FONT-FAMILY: Symbol" lang="en-US">t</span>)翻转为h(-<span style="FONT-FAMILY: Symbol" lang="en-US">t</span>)，
+                            再平移为h(t-<span style="FONT-FAMILY: Symbol" lang="en-US">t</span>)，与f(<span style="FONT-FAMILY: Symbol" lang="en-US">t</span>)乘积的结果，求面积。</p>
+                        <p class="text-left">然而，卷积不必“卷”，还有另一种解说：将h(t)平移一个时间量<span style="FONT-FAMILY: Symbol" lang="en-US">t</span>成为h(t-<span style="FONT-FAMILY: Symbol" lang="en-US">t</span>)，
+                            乘在<span style="FONT-FAMILY: Symbol" lang="en-US">t</span>处的函数值f(<span style="FONT-FAMILY: Symbol" lang="en-US">t</span>)，取遍所有<span style="FONT-FAMILY: Symbol" lang="en-US">t</span>，将乘积累积起来，就得到卷积的结果。</p>
+                    </section>
+                    <section>
+                        <p>以两个有限长序列的有限卷积为例：</p>
+                        <img src="images/5.png" />
+                        <p><small>事实上，不“卷”的计算方法已被用来构造数字化的卷积器。</small></p>
+                    </section>
+                </section>
+
+				<section>
 					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
+						<h2>卷积的物理意义</h2>
 					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
+                    <section>
+                        <h3>受迫振动</h3>
+                        <p class="text-left">将强迫力时程分解为一系列的脉冲的叠加，如果已知系统在单个脉冲下的响应，
+                            并注意到 s 时刻的脉冲只对时间 t > s 的响应有影响，
+                            那么整个系统在 t 时刻的响应就等于所有t时刻以前的脉冲各自单独作用下的叠加。</p>
+                        <p class="text-left">用 h(t) 表示系统在单位脉冲作用下 t 时刻的响应。
+                            那么 <span style="FONT-FAMILY: Symbol" lang="en-US">t</span> 时刻的脉冲在系统
+                            t (t > <span style="FONT-FAMILY: Symbol" lang="en-US">t</span>)
+                            时刻产生的影响就等于 h(t-<span style="FONT-FAMILY: Symbol" lang="en-US">t</span>)，
+                            将所有 <span style="FONT-FAMILY: Symbol" lang="en-US">t</span> (=0~t) 加起来，
+                            就得到整个系统在 t 时刻的响应。</p>
+                        <p class="text-left">对于离散时间，就是相加；对于连续时间，变成积分。</p>
+                    </section>
 					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
+						<h3>小孔成像和实际镜头</h3>
+						<p class="text-left">光圈越小，图像越清晰，但是能量就太小了。</p>
+                        <p class="text-left">镜头的不同部分就像一个个的小孔，能把整个外部世界在CCD上成像。</p>
+                        <p class="text-left">如果把镜头当成一个黑箱，用一个脉冲或亮点去刺激镜头，输出的像就是一个点扩散函数。实际的影像理解为点扩散函数和真实世界的卷积，也就是每一个物点经过成像系统后点扩散函数的累加和。</p>
+					    <img src="images/6.png" />
+                    </section>
 				</section>
 
 				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
+                    <section>
+                        <h2>应用</h2>
+                    </section>
+                    <section>
+                        <h3>1. 卷积和概率计算</h3>
+                        <p class="text-left">Q: 一桌人轮流摇骰子，一次摇两个。</p>
+                        <p class="text-left">如果两个骰子结果数字和Y不是{7,8,9}中的任何一个，此玩家算过，不用喝，到下一个人摇；</p>
+                        <p class="text-left">但是如果Y=7，该玩家向公杯中随意倒酒，可多可少，并继续摇；</p>
+                        <p class="text-left">如果Y=8，公杯的酒喝一半，继续摇；</p>
+                        <p class="text-left">如果Y=9，全喝，继续摇。</p>
+                    </section>
+                    <section>
+                        <p class="text-left">显然，游戏的参与者会很关心两个骰子数字（设为X1和X2）和是7，8或9的概率。</p>
+                        <p class="text-left">或者更进一步，他们关心Y=X1+X2的概率分布（probability mass function）。</p>
+                    </section>
+                    <section>
+                        <p class="text-left">首先，考虑Y=7这个事件，其发生的概率等于(X1, X2)=(1, 6), (2, 5), (3, 4), (4, 3), (5, 2), (6, 1)这六个互斥事件发生的概率的和，我们可以得到下面这个式子：</p>
+                        <img src="images/7.png"/>
+                        <p class="text-left">数学上来说，这就是卷积运算。</p>
+                    </section>
+                    <section>
+                        <p class="text-left">两个独立的连续随机变量X1和X2，服从分布概率密度为f1(x)和f2(x)的分布，随机变量Y=X1+X2的概率密度为，</p>
+                        <img src="images/8.png" />
+                        <p class="text-left">对于离散随机变量的分布，上式可以简化成求和的形式:</p>
+                        <img src="images/9.png" />
+                    </section>
+                    <section>
+                        <p class="text-left">计算出上述游戏中投两次骰子数字和Y的概率分布：</p>
+                        <img src="images/10.png" />
+                        <p class="text-left">可以看到，出现Y=7的概率最大，次之的是Y=6和Y=8。如果要让这个游戏更加凶残，不妨改成6，7，8。</p>
+                    </section>
+                    <section>
+                        <h3>2. 卷积和图像处理</h3>
+                    </section>
+                    <section>
+                        <img src="images/11.png" />
+                        <p class="text-left">在本例中，输入是一些离散点（比如 f={⟨x1,y1⟩,⟨x2,y2⟩}），而响应是一个分布集中在零附近的函数。</p>
+                        <img src="images/12.png" />
+                        <img src="images/13.png" />
+                    </section>
+                    <section>
+                        <h4>二维卷积：</h4>
+                        <p class="text-left">用二元组（向量）代替标量，二维的离散卷积的公式应该是这样：</p>
+                        <img src="images/14.png" />
+                        <p class="text-left">图像处理中的卷积：对于图像上的一个点，让模板的原点和该点重合，然后模板上的点和图像
+                        上对应的点相乘，然后各点的积相加，就得到了该点的卷积值。</p>
+                    </section>
 				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
+                <section>
+                    <section>
+                        <h2>卷积神经网络CNN</h2>
+                        <p><small>CNN是深度学习算法在图像处理领域的一个应用</small></p>
+                    </section>
+                    <section>
+                        <h3>1.神经网络</h3>
+                        <p class="text-left">神经网络的每个单元如下：</p>
+                        <img src="images/15.png" />
+                        <p class="text-left">其对应的公式如下：</p>
+                        <img src="images/16.png" />
+                    </section>
+                    <section>
+                        <p class="text-left">下图展示了一个具有一个隐含层的神经网络：</p>
+                        <img src="images/17.png" />
+                        <p class="text-left">其对应的公式如下：</p>
+                        <img src="images/18.png" />
+                    </section>
+                    <section>
+                        <h3>2.卷积神经网络</h3>
+                        <p class="text-left">在图像处理中，往往把图像表示为像素的向量，
+                            比如一个1000×1000的图像，可以表示为一个1000000的向量。
+                            在上一节中提到的神经网络中，如果隐含层数目与输入层一样，即也是1000000时，
+                            那么输入层到隐含层的参数数据为1000000×1000000=10^12，这样就太多了，基本没法训练。
+                            所以图像处理要想练成神经网络大法，必先减少参数加快速度。</p>
+                    </section>
+                    <section>
+                        <h4>2.1 局部感知</h4>
+                        <p class="text-left">一般认为人对外界的认知是从局部到全局的，
+                            而图像的空间联系也是局部的像素联系较为紧密，
+                            而距离较远的像素相关性则较弱。
+                            因而，每个神经元其实没有必要对全局图像进行感知，
+                            只需要对局部进行感知，然后在更高层将局部的信息综合起来就得到了全局的信息。</p>
+                        <p class="text-left">网络部分连通的思想，也是受启发于生物学里面的视觉系统结构。
+                            视觉皮层的神经元就是局部接受信息的（即这些神经元只响应某些特定区域的刺激）。</p>
+                    </section>
+                    <section>
+                        <p class="text-left">如下图所示：左图为全连接，右图为局部连接。</p>
+                        <img src="images/19.png" />
+                        <p class="text-left">在上右图中，假如每个神经元只和10×10个像素值相连，
+                            那么权值数据为1000000×100个参数，减少为原来的千分之一。
+                            而那10×10个像素值对应的10×10个参数，其实就相当于卷积操作。</p>
+                    </section>
+                    <section>
+                        <h4>2.2 参数共享</h4>
+                        <p class="text-left">如果这1000000个神经元的100个参数都是相等的，那么参数数目就变为100了。</p>
+                        <p class="text-left">我们可以这100个参数（也就是卷积操作）看成是提取特征的方式，
+                            该方式与位置无关。这其中隐含的原理则是：图像的一部分的统计特性与其他部分是一样的。</p>
+                    </section>
+                    <section>
+                        <p>如下图所示，展示了一个3x3的卷积核在5x5的图像上做卷积的过程。每个卷积都是一种特征提取方式，就像一个筛子，将图像中符合条件（激活值越大越符合条件）的部分筛选出来。</p>
+                        <img src="images/6.gif"/>
+                    </section>
+                    <section>
+                        <h4>2.3 多卷积核</h4>
+                        <p class="text-left">我们可以添加多个卷积核，比如32个卷积核，可以学习32种特征。在有多个卷积核时，如下图所示：</p>
+                        <img src="images/20.png"/>
+                        <p class="text-left">不同颜色表明不同的卷积核。每个卷积核都会将图像生成为另一幅图像。
+                            比如两个卷积核就可以将生成两幅图像，这两幅图像可以看做是一张图像的不同的通道。</p>
+                    </section>
+                    <section>
+                        <img src="images/21.png"/>
+                        <p>在上图由4个通道卷积得到2个通道的过程中，参数的数目为4×2×2×2个，其中4表示4个通道，第一个2表示生成2个通道，最后的2×2表示卷积核大小。</p>
+                    </section>
+                    <section>
+                        <h4>2.4 Down-pooling - 池化</h4>
+                        <p class="text-left">在通过卷积获得了特征 (features) 之后，下一步我们希望利用这些特征去做分类。</p>
+                        <p class="text-left">假设我们已经学习得到了400个定义在8X8输入上的特征，
+                            每一个特征和图像卷积都会得到一个 (96 − 8 + 1) × (96 − 8 + 1) = 7921
+                            维的卷积特征，由于有 400 个特征，所以每个样例 (example) 都会得到一个
+                            892 × 400 = 3,168,400 维的卷积特征向量。</p>
+                    </section>
+                    <section>
+                        <p class="text-left">为了描述大的图像，一个很自然的想法就是对不同位置的特征进行聚合统计，
+                            例如，人们可以计算图像一个区域上的某个特定特征的平均值 (或最大值)。
+                            这些概要统计特征不仅具有低得多的维度 (相比使用所有提取得到的特征)。
+                            这种聚合的操作就叫做池化 (pooling)，有时也称为平均池化或者最大池化 (取决于计算池化的方法)。</p>
+                        <img src="images/22.png"/>
+                    </section>
+                    <section>
+                        <h4>2.5 多层卷积</h4>
+                        <p class="text-left">在实际应用中，往往使用多层卷积，然后再使用全连接层进行训练，
+                            多层卷积的目的是一层卷积学到的特征往往是局部的，层数越高，学到的特征就越全局化。</p>
+                    </section>
+                </section>
 
 			</div>
 
