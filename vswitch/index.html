@@ -137,7 +137,7 @@
                             而 tss 提取相同的特征，把fields 组合成tuple ,形成流表pipeline最后的样子
                         </aside>
                     </section>
-                    <section>
+                    <!--<section>
                         <h3>Tuple Space Search</h3>
                         <p>L1: phy &nbsp; L2: eth &nbsp; L3: ip &nbsp; L4: tp</p>
                         <table>
@@ -150,12 +150,15 @@
                             </tr>
                             </tbody>
                         </table>
-                    </section>
+                    </section>-->
                     <section>
+                        <h3>Tuple Space Search</h3>
+                        <div style="position:relative">
                         <img data-src="images/18.png">
-                        <p class="fragment">用[x，y，z]中的x、y、z分别表示F1、 F2、F3的前缀长度。</p>
+                        <p class="fragment" style="font-size:0.9em">用[x，y，z]中的x、y、z分别表示F1、 F2、F3的前缀长度。</p>
                         <img data-src="images/19.png" class="fragment"
-                             style="position:absolute;left:50%;top: 10px;margin-left: -310px;">
+                             style="position:absolute;left:50%;top:0px;margin-left: -310px;">
+                        </div>
                         <aside class="notes">
                             三个匹配域和10条对应的规则
                         </aside>
@@ -205,6 +208,9 @@
                             <li>Tuple space search</li>
                             <li>Each tuple has a hash table</li>
                         </ul>
+                    </section>
+                    <section>
+                        <img data-src="images/tss.png" style="width:80%">
                     </section>
                     <section>
                         <h4>Stage</h4>
