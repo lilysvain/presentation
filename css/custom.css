@@ -1,4 +1,4 @@
-.reveal h2,.reveal h3, .reveal h4{
+.reveal h1,.reveal h2,.reveal h3, .reveal h4{
     text-transform: inherit;
 }
 
@@ -16,5 +16,21 @@
 }
 
 strong{
-    color: yellow;
+    color: #fbc02d;
+}
+
+.black p,.black ul{
+    color: #bdbdbd;
+}
+
+.black ul ul{
+    font-size: 0.8em;
+}
+
+.black .reveal h4{
+    font-size: 1.2em;
+}
+
+.black sub{
+    font-size: 0.6em;
 }
