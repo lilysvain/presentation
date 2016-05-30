@@ -34,3 +34,18 @@ strong{
 .black sub{
     font-size: 0.6em;
 }
+
+.reveal .image-nostyle{
+    box-shadow:none;
+}
+
+.reveal .pos-rel{
+    position: relative;
+    margin: 0 auto;
+}
+
+.reveal .pos-abs{
+    position: absolute;
+    top: 0;
+    left: 0;
+}

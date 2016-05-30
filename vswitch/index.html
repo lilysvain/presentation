@@ -238,7 +238,28 @@
                         <img data-src="images/9.png">
                     </section>
                 </section>
-
+                <section>
+                    <h2>3.Cache Performance</h2>
+                    <table>
+                            <tbody style="border:1px solid #fff;">
+                            <tr>
+                                <td style="border:1px solid #fff;">Microflow Cache</td>
+                                <td style="border:1px solid #fff;">Megaflow Cache</td>
+                                <td style="border:1px solid #fff;">Micro+Megaflow Cache</td>
+                            </tr>
+							 <tr>
+                                <td style="border:1px solid #fff;">O(1)</td>
+                                <td style="border:1px solid #fff;">O(m/2)</td>
+                                <td style="border:1px solid #fff;">P*O(1)+(1-P)*O(m/2)</td>
+                            </tr>
+							 <tr>
+                                <td style="border:1px solid #fff;">null</td>
+                                <td style="border:1px solid #fff;white-space:nowrap">m:the tuple number</td>
+                                <td style="border:1px solid #fff;white-space:nowrap">P:the probability to hit micro</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                </section>
 				<!--<section>
                     <section>
                         <h4>Speedup with Microflow Cache</h4>
@@ -292,40 +313,13 @@
                     </section>
 				</section>-->
 
-                <section>
-                    <h2>3.Cache Performance</h2>
-                    <table>
-                        <tbody style="border:1px solid #fff;">
-                        <tr>
-                            <td style="border:1px solid #fff;">Microflow Cache</td>
-                            <td style="border:1px solid #fff;">O(1)</td>
-                            <td style="border:1px solid #fff;">null</td>
-                        </tr>
-                        <tr>
-                            <td style="border:1px solid #fff;">Megaflow Cache</td>
-                            <td style="border:1px solid #fff;">O(m/2)</td>
-                            <td style="border:1px solid #fff;">m is the tuple number</td>
-                        </tr>
-                        <tr>
-                            <td style="border:1px solid #fff;">Micro+Megaflow Cache</td>
-                            <td style="border:1px solid #fff;white-space:nowrap">P*O(1)+(1-P)*O(m/2)</td>
-                            <td style="border:1px solid #fff;">P is the probability to hit microflow cache</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    </section>
-
-                    <section style="text-align: left;">
+				<section style="text-align: left;">
 					<h1>THE END</h1>
 					<p><a href="#">Q &amp; A</a>
 					</p>
 				</section>
 
-                <section>
-                    <h2>Speaker View</h2>
-                    <p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-                    <p>Press the <em>S</em> key to try it out.</p>
-                </section>
+               
 			</div>
 
 		</div>
